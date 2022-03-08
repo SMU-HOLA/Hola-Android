@@ -1,0 +1,617 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#FFFFFF"
+        android:orientation="vertical"
+        tools:context=".MainActivity">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="546dp"
+            android:background="@drawable/map_background6">
+
+
+            <ImageView
+
+                android:id="@+id/imageView"
+                android:layout_width="66dp"
+                android:layout_height="80dp"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="275dp"
+                android:backgroundTint="#619821"
+                app:srcCompat="@drawable/gangseo" />
+
+
+            <ImageView
+                android:id="@+id/imageView2"
+                android:layout_width="79dp"
+                android:layout_height="48dp"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginStart="42dp"
+                android:layout_marginTop="357dp"
+                app:srcCompat="@drawable/yangcheon" />
+
+            <ImageView
+                android:id="@+id/imageView3"
+                android:layout_width="81dp"
+                android:layout_height="54dp"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginStart="27dp"
+                android:layout_marginBottom="81dp"
+                app:srcCompat="@drawable/guro" />
+
+            <ImageView
+                android:id="@+id/imageView5"
+                android:layout_width="82dp"
+                android:layout_height="44dp"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginStart="107dp"
+                android:layout_marginTop="439dp"
+                app:srcCompat="@drawable/geumcheon" />
+
+            <ImageView
+                android:id="@+id/imageView6"
+                android:layout_width="75dp"
+                android:layout_height="68dp"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginStart="81dp"
+                android:layout_marginTop="305dp"
+                app:srcCompat="@drawable/youngdengpo" />
+
+            <ImageView
+                android:id="@+id/imageView7"
+                android:layout_width="73dp"
+                android:layout_height="59dp"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginStart="140dp"
+                android:layout_marginTop="327dp"
+                app:srcCompat="@drawable/dongjak" />
+
+            <ImageView
+                android:id="@+id/imageView8"
+                android:layout_width="83dp"
+                android:layout_height="64dp"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginStart="113dp"
+                android:layout_marginTop="376dp"
+                app:srcCompat="@drawable/gwanak" />
+
+            <ImageView
+                android:id="@+id/imageView9"
+                android:layout_width="54dp"
+                android:layout_height="80dp"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginStart="217dp"
+                android:layout_marginBottom="111dp"
+                app:srcCompat="@drawable/seocho" />
+
+            <ImageView
+                android:id="@+id/imageView10"
+                android:layout_width="68dp"
+                android:layout_height="89dp"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginStart="276dp"
+                android:layout_marginTop="341dp"
+                app:srcCompat="@drawable/gangnam" />
+
+            <ImageView
+                android:id="@+id/imageView11"
+                android:layout_width="66dp"
+                android:layout_height="70dp"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentEnd="true"
+                android:layout_marginTop="331dp"
+                android:layout_marginEnd="15dp"
+                app:srcCompat="@drawable/songpa" />
+
+            <ImageView
+                android:id="@+id/imageView12"
+                android:layout_width="81dp"
+                android:layout_height="71dp"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginStart="327dp"
+                android:layout_marginTop="256dp"
+                app:srcCompat="@drawable/gangdong" />
+
+            <ImageView
+                android:id="@+id/imageView13"
+                android:layout_width="83dp"
+                android:layout_height="63dp"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginStart="59dp"
+                android:layout_marginTop="228dp"
+                app:srcCompat="@drawable/mapo" />
+
+            <ImageView
+                android:id="@+id/imageView14"
+                android:layout_width="95dp"
+                android:layout_height="73dp"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginStart="148dp"
+                android:layout_marginTop="249dp"
+                app:srcCompat="@drawable/youngsan" />
+
+            <ImageView
+                android:id="@+id/imageView15"
+                android:layout_width="86dp"
+                android:layout_height="79dp"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginStart="249dp"
+                android:layout_marginTop="232dp"
+                app:srcCompat="@drawable/seongdong" />
+
+            <ImageView
+                android:id="@+id/imageView16"
+                android:layout_width="81dp"
+                android:layout_height="85dp"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentEnd="true"
+                android:layout_marginTop="171dp"
+                android:layout_marginEnd="15dp"
+                app:srcCompat="@drawable/gwangjin" />
+
+            <ImageView
+                android:id="@+id/imageView17"
+                android:layout_width="68dp"
+                android:layout_height="87dp"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginStart="30dp"
+                android:layout_marginTop="131dp"
+                app:srcCompat="@drawable/ennpyung" />
+
+            <ImageView
+                android:id="@+id/imageView18"
+                android:layout_width="81dp"
+                android:layout_height="67dp"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginStart="327dp"
+                android:layout_marginTop="110dp"
+                app:srcCompat="@drawable/jungrang" />
+
+            <ImageView
+                android:id="@+id/imageView19"
+                android:layout_width="80dp"
+                android:layout_height="86dp"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginStart="327dp"
+                android:layout_marginTop="34dp"
+                app:srcCompat="@drawable/nowon" />
+
+            <ImageView
+                android:id="@+id/imageView20"
+                android:layout_width="84dp"
+                android:layout_height="75dp"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginStart="75dp"
+                android:layout_marginTop="172dp"
+                app:srcCompat="@drawable/seodaemon" />
+
+            <ImageView
+                android:id="@+id/imageView21"
+                android:layout_width="84dp"
+                android:layout_height="63dp"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginStart="105dp"
+                android:layout_marginTop="111dp"
+                app:srcCompat="@drawable/jongro" />
+
+            <ImageView
+                android:id="@+id/imageView22"
+                android:layout_width="80dp"
+                android:layout_height="67dp"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentEnd="true"
+                android:layout_marginTop="183dp"
+                android:layout_marginEnd="146dp"
+                app:srcCompat="@drawable/jung" />
+
+            <ImageView
+                android:id="@+id/imageView24"
+                android:layout_width="100dp"
+                android:layout_height="85dp"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginStart="241dp"
+                android:layout_marginTop="115dp"
+                app:srcCompat="@drawable/dongdaemon" />
+
+            <ImageView
+                android:id="@+id/imageView25"
+                android:layout_width="61dp"
+                android:layout_height="97dp"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginStart="193dp"
+                android:layout_marginTop="100dp"
+                app:srcCompat="@drawable/seongbuk" />
+
+            <ImageView
+                android:id="@+id/imageView26"
+                android:layout_width="98dp"
+                android:layout_height="74dp"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginStart="149dp"
+                android:layout_marginTop="30dp"
+                app:srcCompat="@drawable/gangbuk" />
+
+            <ImageView
+                android:id="@+id/imageView27"
+                android:layout_width="66dp"
+                android:layout_height="84dp"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginStart="248dp"
+                android:layout_marginTop="18dp"
+                app:srcCompat="@drawable/dobong" />
+
+            <TextView
+                android:id="@+id/gangSeoTv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginStart="30dp"
+                android:layout_marginBottom="222dp"
+
+                android:text="강서"
+                android:textColor="#050505"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/yangCheonTv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginStart="49dp"
+                android:layout_marginBottom="149dp"
+                android:fontFamily="@font/suncheon"
+                android:text="양천"
+                android:textColor="#050505"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/guRoTv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginStart="48dp"
+                android:layout_marginBottom="98dp"
+                android:fontFamily="@font/suncheon"
+                android:text="구로"
+                android:textColor="#050505"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/geumCheonTv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginStart="130dp"
+                android:layout_marginBottom="74dp"
+                android:fontFamily="@font/suncheon"
+                android:text="금천"
+                android:textColor="#050505"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/youngDeongPoTv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginStart="90dp"
+                android:layout_marginBottom="200dp"
+                android:fontFamily="@font/suncheon"
+                android:text="영등포"
+                android:textColor="#050505"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/dongJakTv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginStart="163dp"
+                android:layout_marginBottom="181dp"
+                android:fontFamily="@font/suncheon"
+                android:text="동작"
+                android:textColor="#050505"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/gwanAkTv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginStart="133dp"
+                android:layout_marginBottom="123dp"
+                android:fontFamily="@font/suncheon"
+                android:text="관악"
+                android:textColor="#050505"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/seoChoTv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginStart="224dp"
+                android:layout_marginBottom="134dp"
+                android:fontFamily="@font/suncheon"
+                android:text="서초"
+                android:textColor="#050505"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/gangNamTv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginStart="285dp"
+                android:layout_marginBottom="147dp"
+                android:fontFamily="@font/suncheon"
+                android:text="강남"
+                android:textColor="#050505"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/songPaTv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginStart="350dp"
+                android:layout_marginBottom="179dp"
+                android:fontFamily="@font/suncheon"
+                android:text="송파"
+                android:textColor="#050505"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/gangDongTv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginStart="349dp"
+                android:layout_marginBottom="236dp"
+                android:fontFamily="@font/suncheon"
+                android:text="강동"
+                android:textColor="#050505"
+                android:textSize="20sp" />
+
+
+            <TextView
+                android:id="@+id/maPoTv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginStart="85dp"
+                android:layout_marginBottom="281dp"
+                android:fontFamily="@font/suncheon"
+                android:text="마포"
+                android:textColor="#050505"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/yongSanTv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginStart="179dp"
+                android:layout_marginBottom="258dp"
+                android:fontFamily="@font/suncheon"
+                android:text="용산"
+                android:textColor="#050505"
+                android:textSize="20sp" />
+
+
+            <TextView
+                android:id="@+id/seongDongTv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginStart="272dp"
+                android:layout_marginBottom="271dp"
+                android:fontFamily="@font/suncheon"
+                android:text="성동"
+                android:textColor="#050505"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/gwangJinTv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginStart="335dp"
+                android:layout_marginBottom="332dp"
+                android:fontFamily="@font/suncheon"
+                android:text="광진"
+                android:textColor="#050505"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/ennPyungTv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginStart="37dp"
+                android:layout_marginBottom="366dp"
+                android:fontFamily="@font/suncheon"
+                android:text="은평"
+                android:textColor="#050505"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/seoDaeMonTv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginStart="94dp"
+                android:layout_marginBottom="330dp"
+                android:fontFamily="@font/suncheon"
+                android:text="서대문"
+                android:textColor="#050505"
+                android:textSize="20sp" />
+
+
+            <TextView
+                android:id="@+id/jungTv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginStart="200dp"
+                android:layout_marginBottom="315dp"
+                android:fontFamily="@font/suncheon"
+                android:text="중구"
+                android:textColor="#050505"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/dongDaeMonTv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginStart="264dp"
+                android:layout_marginBottom="372dp"
+                android:fontFamily="@font/suncheon"
+                android:text="동대문"
+                android:textColor="#050505"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/seongBukTv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginStart="203dp"
+                android:layout_marginBottom="384dp"
+                android:fontFamily="@font/suncheon"
+                android:text="성북"
+                android:textColor="#050505"
+                android:textSize="20sp" />
+
+
+            <TextView
+                android:id="@+id/jongRoTv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginStart="132dp"
+                android:layout_marginBottom="390dp"
+                android:fontFamily="@font/suncheon"
+                android:text="종로"
+                android:textColor="#050505"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/jungRrangTv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginStart="344dp"
+                android:layout_marginBottom="391dp"
+                android:fontFamily="@font/suncheon"
+                android:text="중랑"
+                android:textColor="#050505"
+                android:textSize="20sp" />
+
+
+            <TextView
+                android:id="@+id/gangBukTv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginStart="184dp"
+                android:layout_marginBottom="478dp"
+                android:fontFamily="@font/suncheon"
+                android:text="강북"
+                android:textColor="#050505"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/doBongTv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginStart="260dp"
+                android:layout_marginBottom="478dp"
+                android:fontFamily="@font/suncheon"
+                android:text="도봉"
+                android:textColor="#050505"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/noWonTv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginStart="350dp"
+                android:layout_marginBottom="464dp"
+                android:fontFamily="@font/suncheon"
+                android:text="노원"
+                android:textColor="#050505"
+                android:textSize="20sp" />
+
+
+        </RelativeLayout>
+
+        <androidx.viewpager2.widget.ViewPager2
+            android:id="@+id/viewPager"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+        </androidx.viewpager2.widget.ViewPager2>
+
+
+    </LinearLayout>
+</ScrollView>
