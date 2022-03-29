@@ -21,7 +21,7 @@
 
             <ImageView
 
-                android:id="@+id/imageView"
+                android:id="@+id/gangSeoIv"
                 android:layout_width="66dp"
                 android:layout_height="80dp"
                 android:layout_alignParentStart="true"
@@ -33,7 +33,7 @@
 
 
             <ImageView
-                android:id="@+id/imageView2"
+                android:id="@+id/yangCheonIv"
                 android:layout_width="79dp"
                 android:layout_height="48dp"
                 android:layout_alignParentStart="true"
@@ -43,7 +43,7 @@
                 app:srcCompat="@drawable/yangcheon" />
 
             <ImageView
-                android:id="@+id/imageView3"
+                android:id="@+id/guRoIv"
                 android:layout_width="81dp"
                 android:layout_height="54dp"
                 android:layout_alignParentStart="true"
@@ -53,7 +53,7 @@
                 app:srcCompat="@drawable/guro" />
 
             <ImageView
-                android:id="@+id/imageView5"
+                android:id="@+id/geumCheonIv"
                 android:layout_width="82dp"
                 android:layout_height="44dp"
                 android:layout_alignParentStart="true"
@@ -63,7 +63,7 @@
                 app:srcCompat="@drawable/geumcheon" />
 
             <ImageView
-                android:id="@+id/imageView6"
+                android:id="@+id/youngDeongPoIv"
                 android:layout_width="75dp"
                 android:layout_height="68dp"
                 android:layout_alignParentStart="true"
@@ -73,7 +73,7 @@
                 app:srcCompat="@drawable/youngdengpo" />
 
             <ImageView
-                android:id="@+id/imageView7"
+                android:id="@+id/dongJakIv"
                 android:layout_width="73dp"
                 android:layout_height="59dp"
                 android:layout_alignParentStart="true"
@@ -83,7 +83,7 @@
                 app:srcCompat="@drawable/dongjak" />
 
             <ImageView
-                android:id="@+id/imageView8"
+                android:id="@+id/gwanAkIv"
                 android:layout_width="83dp"
                 android:layout_height="64dp"
                 android:layout_alignParentStart="true"
@@ -93,7 +93,7 @@
                 app:srcCompat="@drawable/gwanak" />
 
             <ImageView
-                android:id="@+id/imageView9"
+                android:id="@+id/seoChoIv"
                 android:layout_width="54dp"
                 android:layout_height="80dp"
                 android:layout_alignParentStart="true"
@@ -103,7 +103,7 @@
                 app:srcCompat="@drawable/seocho" />
 
             <ImageView
-                android:id="@+id/imageView10"
+                android:id="@+id/gangNamIv"
                 android:layout_width="68dp"
                 android:layout_height="89dp"
                 android:layout_alignParentStart="true"
@@ -113,7 +113,7 @@
                 app:srcCompat="@drawable/gangnam" />
 
             <ImageView
-                android:id="@+id/imageView11"
+                android:id="@+id/songPaIv"
                 android:layout_width="66dp"
                 android:layout_height="70dp"
                 android:layout_alignParentTop="true"
@@ -123,7 +123,7 @@
                 app:srcCompat="@drawable/songpa" />
 
             <ImageView
-                android:id="@+id/imageView12"
+                android:id="@+id/gangDongIv"
                 android:layout_width="81dp"
                 android:layout_height="71dp"
                 android:layout_alignParentStart="true"
@@ -133,7 +133,7 @@
                 app:srcCompat="@drawable/gangdong" />
 
             <ImageView
-                android:id="@+id/imageView13"
+                android:id="@+id/maPoIv"
                 android:layout_width="83dp"
                 android:layout_height="63dp"
                 android:layout_alignParentStart="true"
@@ -143,7 +143,7 @@
                 app:srcCompat="@drawable/mapo" />
 
             <ImageView
-                android:id="@+id/imageView14"
+                android:id="@+id/yongSanIv"
                 android:layout_width="95dp"
                 android:layout_height="73dp"
                 android:layout_alignParentStart="true"
@@ -153,17 +153,17 @@
                 app:srcCompat="@drawable/youngsan" />
 
             <ImageView
-                android:id="@+id/imageView15"
+                android:id="@+id/seongDongIv"
                 android:layout_width="86dp"
                 android:layout_height="79dp"
                 android:layout_alignParentStart="true"
                 android:layout_alignParentTop="true"
                 android:layout_marginStart="249dp"
-                android:layout_marginTop="232dp"
+                android:layout_marginTop="218dp"
                 app:srcCompat="@drawable/seongdong" />
 
             <ImageView
-                android:id="@+id/imageView16"
+                android:id="@+id/gwangJinIv"
                 android:layout_width="81dp"
                 android:layout_height="85dp"
                 android:layout_alignParentTop="true"
@@ -173,7 +173,7 @@
                 app:srcCompat="@drawable/gwangjin" />
 
             <ImageView
-                android:id="@+id/imageView17"
+                android:id="@+id/ennPyungIv"
                 android:layout_width="68dp"
                 android:layout_height="87dp"
                 android:layout_alignParentStart="true"
@@ -183,7 +183,7 @@
                 app:srcCompat="@drawable/ennpyung" />
 
             <ImageView
-                android:id="@+id/imageView18"
+                android:id="@+id/jungRrangIv"
                 android:layout_width="81dp"
                 android:layout_height="67dp"
                 android:layout_alignParentStart="true"
@@ -193,7 +193,7 @@
                 app:srcCompat="@drawable/jungrang" />
 
             <ImageView
-                android:id="@+id/imageView19"
+                android:id="@+id/noWonIv"
                 android:layout_width="80dp"
                 android:layout_height="86dp"
                 android:layout_alignParentStart="true"
@@ -203,7 +203,7 @@
                 app:srcCompat="@drawable/nowon" />
 
             <ImageView
-                android:id="@+id/imageView20"
+                android:id="@+id/seoDaeMonIv"
                 android:layout_width="84dp"
                 android:layout_height="75dp"
                 android:layout_alignParentStart="true"
@@ -213,7 +213,7 @@
                 app:srcCompat="@drawable/seodaemon" />
 
             <ImageView
-                android:id="@+id/imageView21"
+                android:id="@+id/jongRoIv"
                 android:layout_width="84dp"
                 android:layout_height="63dp"
                 android:layout_alignParentStart="true"
@@ -223,7 +223,7 @@
                 app:srcCompat="@drawable/jongro" />
 
             <ImageView
-                android:id="@+id/imageView22"
+                android:id="@+id/jungIv"
                 android:layout_width="80dp"
                 android:layout_height="67dp"
                 android:layout_alignParentTop="true"
@@ -233,7 +233,7 @@
                 app:srcCompat="@drawable/jung" />
 
             <ImageView
-                android:id="@+id/imageView24"
+                android:id="@+id/dongDaeMonIv"
                 android:layout_width="100dp"
                 android:layout_height="85dp"
                 android:layout_alignParentStart="true"
@@ -243,7 +243,7 @@
                 app:srcCompat="@drawable/dongdaemon" />
 
             <ImageView
-                android:id="@+id/imageView25"
+                android:id="@+id/seongBukIv"
                 android:layout_width="61dp"
                 android:layout_height="97dp"
                 android:layout_alignParentStart="true"
@@ -253,7 +253,7 @@
                 app:srcCompat="@drawable/seongbuk" />
 
             <ImageView
-                android:id="@+id/imageView26"
+                android:id="@+id/gangBukIv"
                 android:layout_width="98dp"
                 android:layout_height="74dp"
                 android:layout_alignParentStart="true"
@@ -263,7 +263,7 @@
                 app:srcCompat="@drawable/gangbuk" />
 
             <ImageView
-                android:id="@+id/imageView27"
+                android:id="@+id/doBongIv"
                 android:layout_width="66dp"
                 android:layout_height="84dp"
                 android:layout_alignParentStart="true"
@@ -450,7 +450,7 @@
                 android:layout_alignParentStart="true"
                 android:layout_alignParentBottom="true"
                 android:layout_marginStart="272dp"
-                android:layout_marginBottom="271dp"
+                android:layout_marginBottom="282dp"
                 android:fontFamily="@font/suncheon"
                 android:text="성동"
                 android:textColor="#050505"
