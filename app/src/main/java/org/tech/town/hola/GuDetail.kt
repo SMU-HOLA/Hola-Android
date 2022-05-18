@@ -4,20 +4,21 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.Gravity
 import android.view.MenuItem
-import android.widget.Toast
+
 import androidx.appcompat.widget.Toolbar
 import androidx.core.view.GravityCompat
 import androidx.drawerlayout.widget.DrawerLayout
-import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.fragment.app.Fragment
 import com.google.android.material.navigation.NavigationView
 import kotlinx.android.synthetic.main.activity_gu_detail.*
-
+import org.tech.town.hola.guFragment.*
 
 
 class GuDetail : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener {
     lateinit var navigationView: NavigationView
     lateinit var drawerLayout: DrawerLayout
     val adapter = DongScoreAdapter()
+    //val guAdapter = GuListAdapter()
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_gu_detail)
@@ -25,210 +26,108 @@ class GuDetail : AppCompatActivity(), NavigationView.OnNavigationItemSelectedLis
 
 
 
-        val layoutManager = LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false)
-        dongRecyclerView.layoutManager = layoutManager
+
+        //val layoutManager = LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false)
+        //dongRecyclerView.layoutManager = layoutManager
 
         val guName = intent.getStringExtra("guName")
-
-
-        if (guName.equals("seoDaeMon")) {
-            mapIv.setImageResource(R.drawable.map_seodaemon)
-            adapter.items.add(DongScore("연희동", 4.6, 4, 4.8, 5, 3, 2.7))
-            adapter.items.add(DongScore("신촌동", 4.6, 4, 4.8, 5, 3, 2.7))
-            adapter.items.add(DongScore("홍은동", 4.6, 4, 4.8, 5, 3, 2.7))
-            dongRecyclerView.adapter = adapter
+        if (guName.equals("gangSeo")) {
+            changeFragment(GangSeoFragment())
         }
-        else if (guName.equals("gangSeo")){
-            mapIv.setImageResource(R.drawable.map_gangseo)
-            adapter.items.add(DongScore("연희동", 4.6, 4, 4.8, 5, 3, 2.7))
-            adapter.items.add(DongScore("신촌동", 4.6, 4, 4.8, 5, 3, 2.7))
-            adapter.items.add(DongScore("홍은동", 4.6, 4, 4.8, 5, 3, 2.7))
-            dongRecyclerView.adapter = adapter
-
+        else if(guName.equals("gangNam")){
+            changeFragment(GangNamFragment())
+        }
+        else if(guName.equals("gangDong")){
+            changeFragment(GangDongFragment())
+        }
+        else if (guName.equals("seoDaeMon")) {
+            changeFragment(SeoDaeMonFragment())
         }
         else if (guName.equals("youngDeongPo")){
-            mapIv.setImageResource(R.drawable.map_youngdeongpo)
-            adapter.items.add(DongScore("연희동", 4.6, 4, 4.8, 5, 3, 2.7))
-            adapter.items.add(DongScore("신촌동", 4.6, 4, 4.8, 5, 3, 2.7))
-            adapter.items.add(DongScore("홍은동", 4.6, 4, 4.8, 5, 3, 2.7))
-            dongRecyclerView.adapter = adapter
+            changeFragment(YoungDeongPoFragment())
 
         }
         else if (guName.equals("yangCheon")){
-            mapIv.setImageResource(R.drawable.map_yangchun)
-            adapter.items.add(DongScore("연희동", 4.6, 4, 4.8, 5, 3, 2.7))
-            adapter.items.add(DongScore("신촌동", 4.6, 4, 4.8, 5, 3, 2.7))
-            adapter.items.add(DongScore("홍은동", 4.6, 4, 4.8, 5, 3, 2.7))
-            dongRecyclerView.adapter = adapter
+            changeFragment(YangCheonFragment())
 
         }
         else if (guName.equals("guRo")){
-            mapIv.setImageResource(R.drawable.map_guro)
-            adapter.items.add(DongScore("연희동", 4.6, 4, 4.8, 5, 3, 2.7))
-            adapter.items.add(DongScore("신촌동", 4.6, 4, 4.8, 5, 3, 2.7))
-            adapter.items.add(DongScore("홍은동", 4.6, 4, 4.8, 5, 3, 2.7))
-            dongRecyclerView.adapter = adapter
+            changeFragment(GuRoFragment())
 
         }
 
         else if (guName.equals("geumCheon")){
-            mapIv.setImageResource(R.drawable.map_geumcheon)
-            adapter.items.add(DongScore("연희동", 4.6, 4, 4.8, 5, 3, 2.7))
-            adapter.items.add(DongScore("신촌동", 4.6, 4, 4.8, 5, 3, 2.7))
-            adapter.items.add(DongScore("홍은동", 4.6, 4, 4.8, 5, 3, 2.7))
-            dongRecyclerView.adapter = adapter
+            changeFragment(GeumCheonFragment())
 
         }
         else if (guName.equals("dongJak")){
-            mapIv.setImageResource(R.drawable.map_dongjak)
-            adapter.items.add(DongScore("연희동", 4.6, 4, 4.8, 5, 3, 2.7))
-            adapter.items.add(DongScore("신촌동", 4.6, 4, 4.8, 5, 3, 2.7))
-            adapter.items.add(DongScore("홍은동", 4.6, 4, 4.8, 5, 3, 2.7))
-            dongRecyclerView.adapter = adapter
+            changeFragment(DongJakFragment())
 
         }
         else if (guName.equals("gwanAk")){
-            mapIv.setImageResource(R.drawable.map_gwanak)
-            adapter.items.add(DongScore("연희동", 4.6, 4, 4.8, 5, 3, 2.7))
-            adapter.items.add(DongScore("신촌동", 4.6, 4, 4.8, 5, 3, 2.7))
-            adapter.items.add(DongScore("홍은동", 4.6, 4, 4.8, 5, 3, 2.7))
-            dongRecyclerView.adapter = adapter
+            changeFragment(GwanAkFragment())
 
         }
         else if (guName.equals("seoCho")){
-            mapIv.setImageResource(R.drawable.map_seocho)
-            adapter.items.add(DongScore("연희동", 4.6, 4, 4.8, 5, 3, 2.7))
-            adapter.items.add(DongScore("신촌동", 4.6, 4, 4.8, 5, 3, 2.7))
-            adapter.items.add(DongScore("홍은동", 4.6, 4, 4.8, 5, 3, 2.7))
-            dongRecyclerView.adapter = adapter
-
-        }
-        else if (guName.equals("gangNam")){
-            mapIv.setImageResource(R.drawable.map_gangnam)
-            adapter.items.add(DongScore("연희동", 4.6, 4, 4.8, 5, 3, 2.7))
-            adapter.items.add(DongScore("신촌동", 4.6, 4, 4.8, 5, 3, 2.7))
-            adapter.items.add(DongScore("홍은동", 4.6, 4, 4.8, 5, 3, 2.7))
-            dongRecyclerView.adapter = adapter
+            changeFragment(SeoChoFragment())
 
         }
         else if (guName.equals("songPa")){
-            mapIv.setImageResource(R.drawable.map_songpa)
-            adapter.items.add(DongScore("연희동", 4.6, 4, 4.8, 5, 3, 2.7))
-            adapter.items.add(DongScore("신촌동", 4.6, 4, 4.8, 5, 3, 2.7))
-            adapter.items.add(DongScore("홍은동", 4.6, 4, 4.8, 5, 3, 2.7))
-            dongRecyclerView.adapter = adapter
+            changeFragment(SongPaFragment())
 
         }
         else if (guName.equals("gangDong")){
-            mapIv.setImageResource(R.drawable.map_gangdong)
-            adapter.items.add(DongScore("연희동", 4.6, 4, 4.8, 5, 3, 2.7))
-            adapter.items.add(DongScore("신촌동", 4.6, 4, 4.8, 5, 3, 2.7))
-            adapter.items.add(DongScore("홍은동", 4.6, 4, 4.8, 5, 3, 2.7))
-            dongRecyclerView.adapter = adapter
+            changeFragment(GangDongFragment())
 
         }
         else if (guName.equals("maPo")){
-            mapIv.setImageResource(R.drawable.map_mapo)
-            adapter.items.add(DongScore("연희동", 4.6, 4, 4.8, 5, 3, 2.7))
-            adapter.items.add(DongScore("신촌동", 4.6, 4, 4.8, 5, 3, 2.7))
-            adapter.items.add(DongScore("홍은동", 4.6, 4, 4.8, 5, 3, 2.7))
-            dongRecyclerView.adapter = adapter
+            changeFragment(MaPoFragment())
 
         }
         else if (guName.equals("yongSan")){
-            mapIv.setImageResource(R.drawable.map_yongsan)
-            adapter.items.add(DongScore("연희동", 4.6, 4, 4.8, 5, 3, 2.7))
-            adapter.items.add(DongScore("신촌동", 4.6, 4, 4.8, 5, 3, 2.7))
-            adapter.items.add(DongScore("홍은동", 4.6, 4, 4.8, 5, 3, 2.7))
-            dongRecyclerView.adapter = adapter
+            changeFragment(YongSanFragment())
 
         }
         else if (guName.equals("seongDong")){
-            mapIv.setImageResource(R.drawable.map_seongdong)
-            adapter.items.add(DongScore("연희동", 4.6, 4, 4.8, 5, 3, 2.7))
-            adapter.items.add(DongScore("신촌동", 4.6, 4, 4.8, 5, 3, 2.7))
-            adapter.items.add(DongScore("홍은동", 4.6, 4, 4.8, 5, 3, 2.7))
-            dongRecyclerView.adapter = adapter
+            changeFragment(SeongDongFragment())
 
         }
         else if (guName.equals("gwangJin")){
-            mapIv.setImageResource(R.drawable.map_gwangjin)
-            adapter.items.add(DongScore("연희동", 4.6, 4, 4.8, 5, 3, 2.7))
-            adapter.items.add(DongScore("신촌동", 4.6, 4, 4.8, 5, 3, 2.7))
-            adapter.items.add(DongScore("홍은동", 4.6, 4, 4.8, 5, 3, 2.7))
-            dongRecyclerView.adapter = adapter
+            changeFragment(GwangJinFragment())
 
         }
         else if (guName.equals("jung")){
-            mapIv.setImageResource(R.drawable.map_jung)
-            adapter.items.add(DongScore("연희동", 4.6, 4, 4.8, 5, 3, 2.7))
-            adapter.items.add(DongScore("신촌동", 4.6, 4, 4.8, 5, 3, 2.7))
-            adapter.items.add(DongScore("홍은동", 4.6, 4, 4.8, 5, 3, 2.7))
-            dongRecyclerView.adapter = adapter
-
+            changeFragment(JungFragment())
         }
         else if (guName.equals("dongDaeMon")){
-            mapIv.setImageResource(R.drawable.map_dongdaemon)
-            adapter.items.add(DongScore("연희동", 4.6, 4, 4.8, 5, 3, 2.7))
-            adapter.items.add(DongScore("신촌동", 4.6, 4, 4.8, 5, 3, 2.7))
-            adapter.items.add(DongScore("홍은동", 4.6, 4, 4.8, 5, 3, 2.7))
-            dongRecyclerView.adapter = adapter
+            changeFragment(DongDaeMonFragment())
 
         }
         else if (guName.equals("jungRang")){
-            mapIv.setImageResource(R.drawable.map_jungrang)
-            adapter.items.add(DongScore("연희동", 4.6, 4, 4.8, 5, 3, 2.7))
-            adapter.items.add(DongScore("신촌동", 4.6, 4, 4.8, 5, 3, 2.7))
-            adapter.items.add(DongScore("홍은동", 4.6, 4, 4.8, 5, 3, 2.7))
-            dongRecyclerView.adapter = adapter
-
+            changeFragment(JungRangFragment())
         }
         else if (guName.equals("ennPyung")){
-            mapIv.setImageResource(R.drawable.map_ennpyung)
-            adapter.items.add(DongScore("연희동", 4.6, 4, 4.8, 5, 3, 2.7))
-            adapter.items.add(DongScore("신촌동", 4.6, 4, 4.8, 5, 3, 2.7))
-            adapter.items.add(DongScore("홍은동", 4.6, 4, 4.8, 5, 3, 2.7))
-            dongRecyclerView.adapter = adapter
+            changeFragment(EnnPyungFragment())
 
         }
         else if (guName.equals("jongRo")){
-            mapIv.setImageResource(R.drawable.map_jongro)
-            adapter.items.add(DongScore("연희동", 4.6, 4, 4.8, 5, 3, 2.7))
-            adapter.items.add(DongScore("신촌동", 4.6, 4, 4.8, 5, 3, 2.7))
-            adapter.items.add(DongScore("홍은동", 4.6, 4, 4.8, 5, 3, 2.7))
-            dongRecyclerView.adapter = adapter
+            changeFragment(JongRoFragment())
 
         }
         else if (guName.equals("seongBuk")){
-            mapIv.setImageResource(R.drawable.map_seongbuk)
-            adapter.items.add(DongScore("연희동", 4.6, 4, 4.8, 5, 3, 2.7))
-            adapter.items.add(DongScore("신촌동", 4.6, 4, 4.8, 5, 3, 2.7))
-            adapter.items.add(DongScore("홍은동", 4.6, 4, 4.8, 5, 3, 2.7))
-            dongRecyclerView.adapter = adapter
+            changeFragment(SeongBukFragment())
 
         }
         else if (guName.equals("gangBuk")){
-            mapIv.setImageResource(R.drawable.map_gangbuk)
-            adapter.items.add(DongScore("연희동", 4.6, 4, 4.8, 5, 3, 2.7))
-            adapter.items.add(DongScore("신촌동", 4.6, 4, 4.8, 5, 3, 2.7))
-            adapter.items.add(DongScore("홍은동", 4.6, 4, 4.8, 5, 3, 2.7))
-            dongRecyclerView.adapter = adapter
+            changeFragment(GangBukFragment())
 
         }
         else if (guName.equals("doBong")){
-            mapIv.setImageResource(R.drawable.map_dobong)
-            adapter.items.add(DongScore("연희동", 4.6, 4, 4.8, 5, 3, 2.7))
-            adapter.items.add(DongScore("신촌동", 4.6, 4, 4.8, 5, 3, 2.7))
-            adapter.items.add(DongScore("홍은동", 4.6, 4, 4.8, 5, 3, 2.7))
-            dongRecyclerView.adapter = adapter
+            changeFragment(DoBongFragment())
 
         }
         else if (guName.equals("noWon")){
-            mapIv.setImageResource(R.drawable.map_nowon)
-            adapter.items.add(DongScore("연희동", 4.6, 4, 4.8, 5, 3, 2.7))
-            adapter.items.add(DongScore("신촌동", 4.6, 4, 4.8, 5, 3, 2.7))
-            adapter.items.add(DongScore("홍은동", 4.6, 4, 4.8, 5, 3, 2.7))
-            dongRecyclerView.adapter = adapter
+            changeFragment(NoWonFragment())
 
         }
 
@@ -249,7 +148,10 @@ class GuDetail : AppCompatActivity(), NavigationView.OnNavigationItemSelectedLis
         navigationView.setNavigationItemSelectedListener(this) //navigation 리스너
 
 
+
     }
+
+
 
     // 툴바 메뉴 버튼이 클릭 됐을 때 실행하는 함수
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
@@ -267,208 +169,119 @@ class GuDetail : AppCompatActivity(), NavigationView.OnNavigationItemSelectedLis
     // 드로어 내 아이템 클릭 이벤트 처리하는 함수
     override fun onNavigationItemSelected(item: MenuItem): Boolean {
         when(item.itemId){
+            R.id.gangSeoMenu->{
+                changeFragment(GangSeoFragment())
+                drawerLayout.closeDrawer(Gravity.LEFT)
+            }
             R.id.gangNamMenu-> {
-                mapIv.setImageResource(R.drawable.map_gangnam)
-                adapter.items.add(DongScore("연희동", 4.6, 4, 4.8, 5, 3, 2.7))
-                adapter.items.add(DongScore("신촌동", 4.6, 4, 4.8, 5, 3, 2.7))
-                adapter.items.add(DongScore("홍은동", 4.6, 4, 4.8, 5, 3, 2.7))
-                dongRecyclerView.adapter = adapter
+                changeFragment(GangNamFragment())
                 drawerLayout.closeDrawer(Gravity.LEFT)
             }
             R.id.gangDongMenu-> {
-                mapIv.setImageResource(R.drawable.map_gangdong)
-                adapter.items.add(DongScore("연희동", 4.6, 4, 4.8, 5, 3, 2.7))
-                adapter.items.add(DongScore("신촌동", 4.6, 4, 4.8, 5, 3, 2.7))
-                adapter.items.add(DongScore("홍은동", 4.6, 4, 4.8, 5, 3, 2.7))
-                dongRecyclerView.adapter = adapter
+                changeFragment(GangDongFragment())
                 drawerLayout.closeDrawer(Gravity.LEFT)
             }
             R.id.gangBukMenu-> {
-                mapIv.setImageResource(R.drawable.map_gangbuk)
-                adapter.items.add(DongScore("연희동", 4.6, 4, 4.8, 5, 3, 2.7))
-                adapter.items.add(DongScore("신촌동", 4.6, 4, 4.8, 5, 3, 2.7))
-                adapter.items.add(DongScore("홍은동", 4.6, 4, 4.8, 5, 3, 2.7))
-                dongRecyclerView.adapter = adapter
+                changeFragment(GangBukFragment())
                 drawerLayout.closeDrawer(Gravity.LEFT)
             }
-            R.id.gangSeoMenu-> {
-                mapIv.setImageResource(R.drawable.map_gangseo)
-                adapter.items.add(DongScore("연희동", 4.6, 4, 4.8, 5, 3, 2.7))
-                adapter.items.add(DongScore("신촌동", 4.6, 4, 4.8, 5, 3, 2.7))
-                adapter.items.add(DongScore("홍은동", 4.6, 4, 4.8, 5, 3, 2.7))
-                dongRecyclerView.adapter = adapter
-                drawerLayout.closeDrawer(Gravity.LEFT)
-            }
+
             R.id.gwanAkMenu-> {
-                mapIv.setImageResource(R.drawable.map_gwanak)
-                adapter.items.add(DongScore("연희동", 4.6, 4, 4.8, 5, 3, 2.7))
-                adapter.items.add(DongScore("신촌동", 4.6, 4, 4.8, 5, 3, 2.7))
-                adapter.items.add(DongScore("홍은동", 4.6, 4, 4.8, 5, 3, 2.7))
-                dongRecyclerView.adapter = adapter
+                changeFragment(GwanAkFragment())
                 drawerLayout.closeDrawer(Gravity.LEFT)
             }
             R.id.gwangJinMenu-> {
-                mapIv.setImageResource(R.drawable.map_gwangjin)
-                adapter.items.add(DongScore("연희동", 4.6, 4, 4.8, 5, 3, 2.7))
-                adapter.items.add(DongScore("신촌동", 4.6, 4, 4.8, 5, 3, 2.7))
-                adapter.items.add(DongScore("홍은동", 4.6, 4, 4.8, 5, 3, 2.7))
-                dongRecyclerView.adapter = adapter
+                changeFragment(GwangJinFragment())
                 drawerLayout.closeDrawer(Gravity.LEFT)
             }
             R.id.guRoMenu-> {
-                mapIv.setImageResource(R.drawable.map_guro)
-                adapter.items.add(DongScore("연희동", 4.6, 4, 4.8, 5, 3, 2.7))
-                adapter.items.add(DongScore("신촌동", 4.6, 4, 4.8, 5, 3, 2.7))
-                adapter.items.add(DongScore("홍은동", 4.6, 4, 4.8, 5, 3, 2.7))
-                dongRecyclerView.adapter = adapter
+                changeFragment(GuRoFragment())
                 drawerLayout.closeDrawer(Gravity.LEFT)
             }
             R.id.geumCheonMenu-> {
-                mapIv.setImageResource(R.drawable.map_geumcheon)
-                adapter.items.add(DongScore("연희동", 4.6, 4, 4.8, 5, 3, 2.7))
-                adapter.items.add(DongScore("신촌동", 4.6, 4, 4.8, 5, 3, 2.7))
-                adapter.items.add(DongScore("홍은동", 4.6, 4, 4.8, 5, 3, 2.7))
-                dongRecyclerView.adapter = adapter
+                changeFragment(GeumCheonFragment())
                 drawerLayout.closeDrawer(Gravity.LEFT)
             }
             R.id.noWonMenu-> {
-                mapIv.setImageResource(R.drawable.map_nowon)
-                adapter.items.add(DongScore("연희동", 4.6, 4, 4.8, 5, 3, 2.7))
-                adapter.items.add(DongScore("신촌동", 4.6, 4, 4.8, 5, 3, 2.7))
-                adapter.items.add(DongScore("홍은동", 4.6, 4, 4.8, 5, 3, 2.7))
-                dongRecyclerView.adapter = adapter
+                changeFragment(NoWonFragment())
                 drawerLayout.closeDrawer(Gravity.LEFT)
             }
             R.id.doBongMenu-> {
-                mapIv.setImageResource(R.drawable.map_dobong)
-                adapter.items.add(DongScore("연희동", 4.6, 4, 4.8, 5, 3, 2.7))
-                adapter.items.add(DongScore("신촌동", 4.6, 4, 4.8, 5, 3, 2.7))
-                adapter.items.add(DongScore("홍은동", 4.6, 4, 4.8, 5, 3, 2.7))
-                dongRecyclerView.adapter = adapter
+                changeFragment(DoBongFragment())
                 drawerLayout.closeDrawer(Gravity.LEFT)
             }
             R.id.dongDaeMonMenu-> {
-                mapIv.setImageResource(R.drawable.map_dongdaemon)
-                adapter.items.add(DongScore("연희동", 4.6, 4, 4.8, 5, 3, 2.7))
-                adapter.items.add(DongScore("신촌동", 4.6, 4, 4.8, 5, 3, 2.7))
-                adapter.items.add(DongScore("홍은동", 4.6, 4, 4.8, 5, 3, 2.7))
-                dongRecyclerView.adapter = adapter
+                changeFragment(DongDaeMonFragment())
                 drawerLayout.closeDrawer(Gravity.LEFT)
             }
             R.id.dongJakMenu-> {
-                mapIv.setImageResource(R.drawable.map_dongjak)
-                adapter.items.add(DongScore("연희동", 4.6, 4, 4.8, 5, 3, 2.7))
-                adapter.items.add(DongScore("신촌동", 4.6, 4, 4.8, 5, 3, 2.7))
-                adapter.items.add(DongScore("홍은동", 4.6, 4, 4.8, 5, 3, 2.7))
-                dongRecyclerView.adapter = adapter
+                changeFragment(DongJakFragment())
                 drawerLayout.closeDrawer(Gravity.LEFT)
             }
             R.id.maPoMenu-> {
-                mapIv.setImageResource(R.drawable.map_mapo)
-                adapter.items.add(DongScore("연희동", 4.6, 4, 4.8, 5, 3, 2.7))
-                adapter.items.add(DongScore("신촌동", 4.6, 4, 4.8, 5, 3, 2.7))
-                adapter.items.add(DongScore("홍은동", 4.6, 4, 4.8, 5, 3, 2.7))
-                dongRecyclerView.adapter = adapter
+                changeFragment(MaPoFragment())
                 drawerLayout.closeDrawer(Gravity.LEFT)
             }
             R.id.seoDaeMonMenu-> {
-                mapIv.setImageResource(R.drawable.map_seodaemon)
-                adapter.items.add(DongScore("연희동", 4.6, 4, 4.8, 5, 3, 2.7))
-                adapter.items.add(DongScore("신촌동", 4.6, 4, 4.8, 5, 3, 2.7))
-                adapter.items.add(DongScore("홍은동", 4.6, 4, 4.8, 5, 3, 2.7))
-                dongRecyclerView.adapter = adapter
+                changeFragment(SeoDaeMonFragment())
                 drawerLayout.closeDrawer(Gravity.LEFT)
             }
             R.id.seoChoMenu-> {
-                mapIv.setImageResource(R.drawable.map_seocho)
-                adapter.items.add(DongScore("연희동", 4.6, 4, 4.8, 5, 3, 2.7))
-                adapter.items.add(DongScore("신촌동", 4.6, 4, 4.8, 5, 3, 2.7))
-                adapter.items.add(DongScore("홍은동", 4.6, 4, 4.8, 5, 3, 2.7))
-                dongRecyclerView.adapter = adapter
+                changeFragment(SeoChoFragment())
                 drawerLayout.closeDrawer(Gravity.LEFT)
             }
             R.id.seongDongMenu-> {
-                mapIv.setImageResource(R.drawable.map_seongdong)
-                adapter.items.add(DongScore("연희동", 4.6, 4, 4.8, 5, 3, 2.7))
-                adapter.items.add(DongScore("신촌동", 4.6, 4, 4.8, 5, 3, 2.7))
-                adapter.items.add(DongScore("홍은동", 4.6, 4, 4.8, 5, 3, 2.7))
-                dongRecyclerView.adapter = adapter
+                changeFragment(SeongDongFragment())
                 drawerLayout.closeDrawer(Gravity.LEFT)
             }
             R.id.seongBukMenu-> {
-                mapIv.setImageResource(R.drawable.map_seongbuk)
-                adapter.items.add(DongScore("연희동", 4.6, 4, 4.8, 5, 3, 2.7))
-                adapter.items.add(DongScore("신촌동", 4.6, 4, 4.8, 5, 3, 2.7))
-                adapter.items.add(DongScore("홍은동", 4.6, 4, 4.8, 5, 3, 2.7))
-                dongRecyclerView.adapter = adapter
+                changeFragment(SeongBukFragment())
                 drawerLayout.closeDrawer(Gravity.LEFT)
             }
             R.id.songPaMenu-> {
-                mapIv.setImageResource(R.drawable.map_songpa)
-                adapter.items.add(DongScore("연희동", 4.6, 4, 4.8, 5, 3, 2.7))
-                adapter.items.add(DongScore("신촌동", 4.6, 4, 4.8, 5, 3, 2.7))
-                adapter.items.add(DongScore("홍은동", 4.6, 4, 4.8, 5, 3, 2.7))
-                dongRecyclerView.adapter = adapter
+                changeFragment(SongPaFragment())
                 drawerLayout.closeDrawer(Gravity.LEFT)
             }
             R.id.yangCheonMenu-> {
-                mapIv.setImageResource(R.drawable.map_yangchun)
-                adapter.items.add(DongScore("연희동", 4.6, 4, 4.8, 5, 3, 2.7))
-                adapter.items.add(DongScore("신촌동", 4.6, 4, 4.8, 5, 3, 2.7))
-                adapter.items.add(DongScore("홍은동", 4.6, 4, 4.8, 5, 3, 2.7))
-                dongRecyclerView.adapter = adapter
+                changeFragment(YangCheonFragment())
                 drawerLayout.closeDrawer(Gravity.LEFT)
             }
             R.id.youngDeongPoMenu-> {
-                mapIv.setImageResource(R.drawable.map_youngdeongpo)
-                adapter.items.add(DongScore("연희동", 4.6, 4, 4.8, 5, 3, 2.7))
-                adapter.items.add(DongScore("신촌동", 4.6, 4, 4.8, 5, 3, 2.7))
-                adapter.items.add(DongScore("홍은동", 4.6, 4, 4.8, 5, 3, 2.7))
-                dongRecyclerView.adapter = adapter
+                changeFragment(YoungDeongPoFragment())
                 drawerLayout.closeDrawer(Gravity.LEFT)
             }
             R.id.yongSanMenu-> {
-                mapIv.setImageResource(R.drawable.map_yongsan)
-                adapter.items.add(DongScore("연희동", 4.6, 4, 4.8, 5, 3, 2.7))
-                adapter.items.add(DongScore("신촌동", 4.6, 4, 4.8, 5, 3, 2.7))
-                adapter.items.add(DongScore("홍은동", 4.6, 4, 4.8, 5, 3, 2.7))
-                dongRecyclerView.adapter = adapter
+                changeFragment(YongSanFragment())
                 drawerLayout.closeDrawer(Gravity.LEFT)
             }
             R.id.ennPyungMenu-> {
-                mapIv.setImageResource(R.drawable.map_ennpyung)
-                adapter.items.add(DongScore("연희동", 4.6, 4, 4.8, 5, 3, 2.7))
-                adapter.items.add(DongScore("신촌동", 4.6, 4, 4.8, 5, 3, 2.7))
-                adapter.items.add(DongScore("홍은동", 4.6, 4, 4.8, 5, 3, 2.7))
-                dongRecyclerView.adapter = adapter
+                changeFragment(EnnPyungFragment())
                 drawerLayout.closeDrawer(Gravity.LEFT)
             }
             R.id.jongRoMenu-> {
-                mapIv.setImageResource(R.drawable.map_jongro)
-                adapter.items.add(DongScore("연희동", 4.6, 4, 4.8, 5, 3, 2.7))
-                adapter.items.add(DongScore("신촌동", 4.6, 4, 4.8, 5, 3, 2.7))
-                adapter.items.add(DongScore("홍은동", 4.6, 4, 4.8, 5, 3, 2.7))
-                dongRecyclerView.adapter = adapter
+                changeFragment(JongRoFragment())
                 drawerLayout.closeDrawer(Gravity.LEFT)
             }
             R.id.jungMenu-> {
-                mapIv.setImageResource(R.drawable.map_jung)
-                adapter.items.add(DongScore("연희동", 4.6, 4, 4.8, 5, 3, 2.7))
-                adapter.items.add(DongScore("신촌동", 4.6, 4, 4.8, 5, 3, 2.7))
-                adapter.items.add(DongScore("홍은동", 4.6, 4, 4.8, 5, 3, 2.7))
-                dongRecyclerView.adapter = adapter
+                changeFragment(JungFragment())
                 drawerLayout.closeDrawer(Gravity.LEFT)
             }
             R.id.jungRangMenu-> {
-                mapIv.setImageResource(R.drawable.map_jungrang)
-                adapter.items.add(DongScore("연희동", 4.6, 4, 4.8, 5, 3, 2.7))
-                adapter.items.add(DongScore("신촌동", 4.6, 4, 4.8, 5, 3, 2.7))
-                adapter.items.add(DongScore("홍은동", 4.6, 4, 4.8, 5, 3, 2.7))
-                dongRecyclerView.adapter = adapter
+                changeFragment(JungRangFragment())
                 drawerLayout.closeDrawer(Gravity.LEFT)
             }
 
         }
         return false
     }
+
+
+    // fragment 변경 함수
+    private fun changeFragment(fragment: Fragment) {
+        with(supportFragmentManager.beginTransaction()) {
+            replace(guDetailFrameLayout.id, fragment)
+            commit()
+        }
+    }
+
 }

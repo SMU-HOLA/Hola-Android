@@ -7,12 +7,14 @@
     android:layout_height="match_parent"
     android:fitsSystemWindows="true"
     tools:openDrawer="start">
+
+
+    <!--
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
         tools:context=".GuDetail">
-
 
 
         <ImageView
@@ -28,6 +30,13 @@
 
         </androidx.recyclerview.widget.RecyclerView>
     </LinearLayout>
+-->
+    <FrameLayout
+        android:id="@+id/guDetailFrameLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    </FrameLayout>
 
     <include
         layout="@layout/appbar"
@@ -41,6 +50,7 @@
         android:layout_gravity="start"
         android:fitsSystemWindows="true"
         app:menu="@menu/menu_list"
-        app:headerLayout="@layout/header"/>
+        app:headerLayout="@layout/header"
+        />
 
 </androidx.drawerlayout.widget.DrawerLayout>
