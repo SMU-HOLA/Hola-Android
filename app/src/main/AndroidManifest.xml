@@ -10,16 +10,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Hola">
         <activity
-            android:name=".guActivity.GangSeoDetail"
-            android:exported="true" />
-        <activity
-            android:name=".guActivity.GangSeoActivity"
-            android:exported="true" />
-        <activity
-            android:name=".SearchActivity"
-            android:exported="true" />
-        <activity
-            android:name=".SearchGu"
+            android:name=".GuSearch"
             android:exported="true" />
         <activity
             android:name=".GuDetail"

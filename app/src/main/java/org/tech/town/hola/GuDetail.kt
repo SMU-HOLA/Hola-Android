@@ -1,5 +1,6 @@
 package org.tech.town.hola
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.Gravity
@@ -18,17 +19,15 @@ class GuDetail : AppCompatActivity(), NavigationView.OnNavigationItemSelectedLis
     lateinit var navigationView: NavigationView
     lateinit var drawerLayout: DrawerLayout
     val adapter = DongScoreAdapter()
-    //val guAdapter = GuListAdapter()
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_gu_detail)
 
 
-
-
-
-        //val layoutManager = LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false)
-        //dongRecyclerView.layoutManager = layoutManager
+        searchIv.setOnClickListener {
+            val intent = Intent(this, GuSearch::class.java)
+            startActivity(intent)
+        }
 
         val guName = intent.getStringExtra("guName")
         if (guName.equals("gangSeo")) {
