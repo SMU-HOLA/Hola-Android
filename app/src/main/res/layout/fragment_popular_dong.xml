@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".SampleFragment">
+    tools:context=".PopularDongFragment">
 
 
     <LinearLayout
@@ -17,7 +17,7 @@
             android:layout_height="48dp"
             android:fontFamily="@font/suncheon"
             android:gravity="center"
-            android:text="현재 자취 지역 치안 순위"
+            android:text="현재 자취 지역 동 순위"
             android:textColor="@color/black"
             android:textSize="35sp" />
 
@@ -36,7 +36,7 @@
                 android:src="@drawable/first_medal" />
 
             <TextView
-                android:id="@+id/firstTv"
+                android:id="@+id/dongFirstTv"
                 android:layout_marginLeft="20dp"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
@@ -60,7 +60,7 @@
                 android:src="@drawable/second_medal" />
 
             <TextView
-                android:id="@+id/secondTv"
+                android:id="@+id/dongSecondTv"
                 android:layout_marginLeft="20dp"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
@@ -84,7 +84,7 @@
                 android:src="@drawable/third_medal" />
 
             <TextView
-                android:id="@+id/thirdTv"
+                android:id="@+id/dongThirdTv"
                 android:layout_marginLeft="20dp"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"

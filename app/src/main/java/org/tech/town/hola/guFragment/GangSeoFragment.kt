@@ -7,11 +7,19 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.android.volley.*
+import com.android.volley.toolbox.HttpHeaderParser
+import com.android.volley.toolbox.StringRequest
+import com.android.volley.toolbox.Volley
+import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.fragment_gu.*
-import org.tech.town.hola.DongScore
+import org.json.JSONObject
+import org.tech.town.hola.dataClass.DongScore
 import org.tech.town.hola.DongScoreAdapter
 import org.tech.town.hola.GuDetail
 import org.tech.town.hola.R
+import java.io.UnsupportedEncodingException
+import java.nio.charset.StandardCharsets
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -20,6 +28,11 @@ private const val ARG_PARAM2 = "param2"
 
 
 class GangSeoFragment : Fragment() {
+
+    companion object{
+        var requestQueue: RequestQueue? = null
+    }
+
     lateinit var guDetail: GuDetail
     override fun onAttach(context: Context)
     {   super.onAttach(context)
@@ -43,11 +56,72 @@ class GangSeoFragment : Fragment() {
         val layoutManager = LinearLayoutManager(guDetail, LinearLayoutManager.VERTICAL, false)
         dongRecyclerView.layoutManager = layoutManager
 
-        mapIv.setImageResource(R.drawable.map_gangseo)
-        adapter.items.add(DongScore("강서동", 4.6, 4, 4.8, 5, 3, 2.7))
-        adapter.items.add(DongScore("신촌동", 4.6, 4, 4.8, 5, 3, 2.7))
-        adapter.items.add(DongScore("홍은동", 4.6, 4, 4.8, 5, 3, 2.7))
-        dongRecyclerView.adapter = adapter
+        DoBongFragment.requestQueue = Volley.newRequestQueue(guDetail)
+        send()
+
+    }
+    fun send() {
+        val url = "http://10.0.2.2:8080/district/4"
+
+        val request = object: StringRequest(
+            Request.Method.GET,
+            url,
+            {
+
+                val jsonObject = JSONObject(it)
+                val jsonArray = jsonObject.getJSONArray("dongList")
+
+                guNameTv.text = jsonObject.getString("name")
+                cultureScoreTv.text = jsonObject.getString("culture")
+                convenienceScoreTv.text = jsonObject.getString("convenience")
+                welfareScoreTv.text = jsonObject.getString("welfare")
+                greeneryScoreTv.text = jsonObject.getString("greenery")
+                medicalScoreTv.text = jsonObject.getString("medical")
+                trafficScoreTv.text = jsonObject.getString("transport")
+                activityScoreTv.text = jsonObject.getString("activity")
+                avgScoreTv.text = jsonObject.getString("totalScore")
+
+
+                for (i in 0..jsonArray.length()-1){
+                    adapter.items.add(DongScore(jsonArray.getJSONObject(i).getString("name"),
+                        jsonArray.getJSONObject(i).getDouble("culture"),
+                        jsonArray.getJSONObject(i).getDouble("convenience"),
+                        jsonArray.getJSONObject(i).getDouble("welfare"),
+                        jsonArray.getJSONObject(i).getDouble("greenery"),
+                        jsonArray.getJSONObject(i).getDouble("medical"),
+                        jsonArray.getJSONObject(i).getDouble("transport"),
+                        jsonArray.getJSONObject(i).getDouble("activity"),
+
+                        ))
+                }
+
+                dongRecyclerView.adapter = adapter
+
+            },
+            {
+                textView.text = "${it.message}"
+            }
+
+        ){
+            override fun parseNetworkResponse(response: NetworkResponse): Response<String>? {
+                return try {
+                    val utf8String = String(response.data, StandardCharsets.UTF_8)
+                    Response.success(utf8String, HttpHeaderParser.parseCacheHeaders(response))
+                } catch (e: UnsupportedEncodingException) {
+                    // log error
+                    Response.error(ParseError(e))
+                } catch (e: Exception) {
+                    // log error
+                    Response.error(ParseError(e))
+                }
+            }
+
+        }
+
+        request.setShouldCache(true)
+        DoBongFragment.requestQueue?.add(request)
+
+
     }
 
 }

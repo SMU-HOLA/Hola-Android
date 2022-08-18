@@ -17,7 +17,7 @@
             android:layout_height="48dp"
             android:fontFamily="@font/suncheon"
             android:gravity="center"
-            android:text="현재 자취 지역 전체 순위"
+            android:text="현재 자취 지역 구 순위"
             android:textColor="@color/black"
             android:textSize="35sp" />
 

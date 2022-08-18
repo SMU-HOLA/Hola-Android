@@ -4,9 +4,8 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import kotlinx.android.synthetic.main.dong_item.view.*
-import kotlinx.android.synthetic.main.dong_item.view.dongNameTv
 import kotlinx.android.synthetic.main.guname.view.*
+import org.tech.town.hola.dataClass.GuList
 
 class GuListAdapter : RecyclerView.Adapter<GuListAdapter.ViewHolder>(){
 

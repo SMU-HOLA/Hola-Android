@@ -1,20 +1,56 @@
 package org.tech.town.hola
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import kotlinx.android.synthetic.main.activity_gu_detail.*
+
+import androidx.appcompat.app.AppCompatActivity
+import androidx.room.Room
+import com.android.volley.*
+import com.android.volley.toolbox.HttpHeaderParser
+import com.android.volley.toolbox.StringRequest
+import com.android.volley.toolbox.Volley
+
 import kotlinx.android.synthetic.main.activity_main.*
+
+import org.tech.town.hola.roomdb.AppDatabase
+import org.tech.town.hola.roomdb.Main
+
+
+import java.io.UnsupportedEncodingException
+import java.nio.charset.StandardCharsets.UTF_8
+
 
 
 class MainActivity : AppCompatActivity() {
+
+    companion object{
+        var requestQueue: RequestQueue? = null
+
+    }
+
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+
+//        //db연결
+//        val db = Room.databaseBuilder(
+//            applicationContext, AppDatabase::class.java, "database"
+//        ).allowMainThreadQueries().build()
+//        //db에 저장된 데이터 불러오기
+//        db.dao().getAll()
+
+
+
+        requestQueue = Volley.newRequestQueue(applicationContext)
+
+        send()
+
+
         //메인화면 랭킹 viewpager
-        val fragmentList = listOf(PopularAreaFragment(),  SampleFragment())
+        val fragmentList = listOf(PopularAreaFragment(),  PopularDongFragment())
 
         val pagerAdapter = ViewPagerAdapter(fragmentList, this)
         viewPager.adapter = pagerAdapter
@@ -245,4 +281,51 @@ class MainActivity : AppCompatActivity() {
 
         }
     }
+
+
+
+
+    fun send() {
+        val url = "http://10.0.2.2:8080/main"
+
+        val request = object: StringRequest(
+            Request.Method.GET,
+            url,
+            {
+                //db연결
+                val db = Room.databaseBuilder(
+                    applicationContext, AppDatabase::class.java, "database"
+                ).allowMainThreadQueries().build()
+                //db에 저장된 데이터 불러오기
+                db.dao().getAll()
+                db.dao().delete()
+                db.dao().insert(Main(it))
+
+            },
+            {
+                    textView.text = "${it.message}"
+            }
+
+        ){
+            override fun parseNetworkResponse(response: NetworkResponse): Response<String>? {
+                return try {
+                    val utf8String = String(response.data, UTF_8)
+                    Response.success(utf8String, HttpHeaderParser.parseCacheHeaders(response))
+                } catch (e: UnsupportedEncodingException) {
+                    // log error
+                    Response.error(ParseError(e))
+                } catch (e: Exception) {
+                    // log error
+                    Response.error(ParseError(e))
+                }
+            }
+
+        }
+
+        request.setShouldCache(true)
+        requestQueue?.add(request)
+    }
+
+
+
 }

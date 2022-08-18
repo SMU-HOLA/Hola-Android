@@ -2,13 +2,20 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="org.tech.town.hola">
 
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.Hola">
+        android:theme="@style/Theme.Hola"
+        android:usesCleartextTraffic="true">
+
+        <activity
+            android:name=".RoomList"
+            android:exported="false" />
         <activity
             android:name=".GuSearch"
             android:exported="true" />
