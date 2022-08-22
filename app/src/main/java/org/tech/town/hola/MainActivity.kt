@@ -12,8 +12,7 @@ import com.android.volley.toolbox.Volley
 
 import kotlinx.android.synthetic.main.activity_main.*
 
-import org.tech.town.hola.roomdb.AppDatabase
-import org.tech.town.hola.roomdb.Main
+
 
 
 import java.io.UnsupportedEncodingException
@@ -46,7 +45,7 @@ class MainActivity : AppCompatActivity() {
 
         requestQueue = Volley.newRequestQueue(applicationContext)
 
-        send()
+//        send()
 
 
         //메인화면 랭킹 viewpager
@@ -156,7 +155,7 @@ class MainActivity : AppCompatActivity() {
         }
 
         gangDongIv.setOnClickListener {
-            val guName = "songPa"
+            val guName = "gangDong"
 
             val intent = Intent(this, GuDetail::class.java)
             intent.putExtra("guName", guName)
@@ -284,47 +283,47 @@ class MainActivity : AppCompatActivity() {
 
 
 
-
-    fun send() {
-        val url = "http://10.0.2.2:8080/main"
-
-        val request = object: StringRequest(
-            Request.Method.GET,
-            url,
-            {
-                //db연결
-                val db = Room.databaseBuilder(
-                    applicationContext, AppDatabase::class.java, "database"
-                ).allowMainThreadQueries().build()
-                //db에 저장된 데이터 불러오기
-                db.dao().getAll()
-                db.dao().delete()
-                db.dao().insert(Main(it))
-
-            },
-            {
-                    textView.text = "${it.message}"
-            }
-
-        ){
-            override fun parseNetworkResponse(response: NetworkResponse): Response<String>? {
-                return try {
-                    val utf8String = String(response.data, UTF_8)
-                    Response.success(utf8String, HttpHeaderParser.parseCacheHeaders(response))
-                } catch (e: UnsupportedEncodingException) {
-                    // log error
-                    Response.error(ParseError(e))
-                } catch (e: Exception) {
-                    // log error
-                    Response.error(ParseError(e))
-                }
-            }
-
-        }
-
-        request.setShouldCache(true)
-        requestQueue?.add(request)
-    }
+//
+//    fun send() {
+//        val url = "http://10.0.2.2:8080/main"
+//
+//        val request = object: StringRequest(
+//            Request.Method.GET,
+//            url,
+//            {
+//                //db연결
+//                val db = Room.databaseBuilder(
+//                    applicationContext, AppDatabase::class.java, "database"
+//                ).allowMainThreadQueries().build()
+//                //db에 저장된 데이터 불러오기
+//                db.dao().getAll()
+//                db.dao().delete()
+//                db.dao().insert(Main(it))
+//
+//            },
+//            {
+//
+//            }
+//
+//        ){
+//            override fun parseNetworkResponse(response: NetworkResponse): Response<String>? {
+//                return try {
+//                    val utf8String = String(response.data, UTF_8)
+//                    Response.success(utf8String, HttpHeaderParser.parseCacheHeaders(response))
+//                } catch (e: UnsupportedEncodingException) {
+//                    // log error
+//                    Response.error(ParseError(e))
+//                } catch (e: Exception) {
+//                    // log error
+//                    Response.error(ParseError(e))
+//                }
+//            }
+//
+//        }
+//
+//        request.setShouldCache(true)
+//        requestQueue?.add(request)
+//    }
 
 
 

@@ -1,6 +1,7 @@
 package org.tech.town.hola.guFragment
 
 import android.content.Context
+import android.content.Intent
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -87,7 +88,9 @@ class DoBongFragment : Fragment() {
 
 
                 for (i in 0..jsonArray.length()-1){
-                    adapter.items.add(DongScore(jsonArray.getJSONObject(i).getString("name"),
+                    adapter.items.add(DongScore(
+                        jsonArray.getJSONObject(i).getInt("id"),
+                        jsonArray.getJSONObject(i).getString("name"),
                         jsonArray.getJSONObject(i).getDouble("culture"),
                         jsonArray.getJSONObject(i).getDouble("convenience"),
                         jsonArray.getJSONObject(i).getDouble("welfare"),
@@ -101,9 +104,25 @@ class DoBongFragment : Fragment() {
 
                 dongRecyclerView.adapter = adapter
 
+                adapter.listener = object: OnDongScoreClickListener{
+                    override fun onItemClick(
+                        holder: DongScoreAdapter.ViewHolder?,
+                        view: View?,
+                        position: Int
+                    ) {
+                        val dongId = adapter.items[position].dongId
+                        val dongName = adapter.items[position].dongName
+                        val intent = Intent(guDetail, RoomList::class.java)
+
+                        intent.putExtra("dongId", dongId)
+                        intent.putExtra("dongName",dongName)
+                        startActivity(intent)
+                    }
+                }
+
             },
             {
-                textView.text = "${it.message}"
+
             }
 
         ){

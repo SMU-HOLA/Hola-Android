@@ -1,6 +1,7 @@
 package org.tech.town.hola.guFragment
 
 import android.content.Context
+import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -14,13 +15,11 @@ import com.android.volley.toolbox.Volley
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.fragment_gu.*
 import org.json.JSONObject
+import org.tech.town.hola.*
 import org.tech.town.hola.dataClass.DongScore
-import org.tech.town.hola.DongScoreAdapter
-import org.tech.town.hola.GuDetail
-import org.tech.town.hola.R
 import java.io.UnsupportedEncodingException
 import java.nio.charset.StandardCharsets
-
+import org.tech.town.hola.R
 
 class JungFragment : Fragment() {
 
@@ -51,6 +50,19 @@ class JungFragment : Fragment() {
         DoBongFragment.requestQueue = Volley.newRequestQueue(guDetail)
         send()
 
+        adapter.listener = object: OnDongScoreClickListener {
+            override fun onItemClick(
+                holder: DongScoreAdapter.ViewHolder?,
+                view: View?,
+                position: Int
+            ) {
+                val dongName = adapter.items[position].dongName
+                val intent = Intent(guDetail, RoomList::class.java)
+                intent.putExtra("dongName", dongName)
+                startActivity(intent)
+            }
+        }
+
     }
     fun send() {
         val url = "http://10.0.2.2:8080/district/24"
@@ -75,7 +87,8 @@ class JungFragment : Fragment() {
 
 
                 for (i in 0..jsonArray.length()-1){
-                    adapter.items.add(DongScore(jsonArray.getJSONObject(i).getString("name"),
+                    adapter.items.add(DongScore(jsonArray.getJSONObject(i).getInt("id"),
+                        jsonArray.getJSONObject(i).getString("name"),
                         jsonArray.getJSONObject(i).getDouble("culture"),
                         jsonArray.getJSONObject(i).getDouble("convenience"),
                         jsonArray.getJSONObject(i).getDouble("welfare"),
@@ -89,9 +102,25 @@ class JungFragment : Fragment() {
 
                 dongRecyclerView.adapter = adapter
 
+                adapter.listener = object: OnDongScoreClickListener{
+                    override fun onItemClick(
+                        holder: DongScoreAdapter.ViewHolder?,
+                        view: View?,
+                        position: Int
+                    ) {
+                        val dongId = adapter.items[position].dongId
+                        val dongName = adapter.items[position].dongName
+                        val intent = Intent(guDetail, RoomList::class.java)
+
+                        intent.putExtra("dongId", dongId)
+                        intent.putExtra("dongName",dongName)
+                        startActivity(intent)
+                    }
+                }
+
             },
             {
-                textView.text = "${it.message}"
+
             }
 
         ){

@@ -24,10 +24,11 @@ class GuDetail : AppCompatActivity(), NavigationView.OnNavigationItemSelectedLis
         setContentView(R.layout.activity_gu_detail)
 
 
-        searchIv.setOnClickListener {
-            val intent = Intent(this, GuSearch::class.java)
-            startActivity(intent)
-        }
+        var guId = intent.getIntExtra("guId", 0)
+
+
+
+
 
         val guName = intent.getStringExtra("guName")
         if (guName.equals("gangSeo")) {

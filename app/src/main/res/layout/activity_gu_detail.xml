@@ -15,13 +15,6 @@
         android:layout_height="match_parent"
         android:orientation="vertical">
 
-        <ImageView
-            android:id="@+id/searchIv"
-            android:layout_gravity="right"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:layout_marginRight="20dp"
-            app:srcCompat="@drawable/ic_search_black_24dp" />
 
         <FrameLayout
         android:id="@+id/guDetailFrameLayout"
